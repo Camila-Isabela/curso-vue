@@ -1,23 +1,24 @@
 <script src="https://unpkg.com/vue@2"></script>
 
 <div id="desafio">
-    <!-- 1) Exiba um alert quando o botão for clicado -->
+    <p>Parte - 1: Exiba um alert quando o botão for clicado</p>
     <div>
-        <button>Exibir Alerta</button>
+        <button v-on:click="exibirAlerta">Exibir Alerta</button>
     </div>
-    
-    <!-- 2) Escute o evento "keydown" e armazene o valor na propriedade
-        data (dica: event.target.value) -->
+    <br><hr>
+    <p>Parte - 2: Escute o evento "keydown" e armazene o valor na propriedade
+        data (dica: event.target.value)</p>
     <div>
-        <input type="text">
+        <input type="text" v-on:keydown="armazenar"/>
         <p>{{ valor }}</p>
     </div>
-    
-    <!-- 3) Ajuste o exemplo 2 para disparar o evento "keydown" somente
-        quando a tecla for ENTER -->
+    <br><hr>
+    <p>Parte - 3: Ajuste o exemplo 2 para disparar o evento "keydown" somente
+        quando a tecla for ENTER</p>
     <div>
-        <input type="text">
-        <p>{{ valor }}</p>
+        <input type="text" v-on:keydown.enter="valor = $event.target.value"/>
+        <p>{{ valor2 }}</p>
     </div>
+    <br><hr>
 </div>
 <script src="app.js"></script>
